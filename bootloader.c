@@ -3,7 +3,8 @@
 #define boot_loader_size (0x8000) //32 kilobyte
 #define main_application_Start_Address (FLASH_BASE_ADDRESS +BOOT_LOADER_SIZE)
 
-
+/ FLASH MEMORY                      /
+/ BLR CODE / MAIN APPLICATION CODE /
 
 void jump_to_main(void)
 {
@@ -28,7 +29,9 @@ void jump_to_main(void)
 }
 int main(void)
 {
-    jump_to_main();
+
+    //read gpio pins and so 
+   jump_to_main();
     //never return 
 
     return 0;
